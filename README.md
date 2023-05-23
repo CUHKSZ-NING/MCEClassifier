@@ -20,8 +20,8 @@ Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-L
 * Predict: `predict(X)` (hard prediction), `predict_proba(X)` (probalistic prediction).
 
 * Parameters: 
-    1. `base_estimator`: classifier object with `predict_proba()` function, "candidate classifier $f^{(1)}(\cdot)$ for MEFAClassifier"
-    2. `n_estimators`: The ensemble size $s$
-    3. ``
-    4. ``
-    5. ``
+    1. `base_estimator`: classifier object with `predict_proba()` function, "candidate classifier $f^{(1)}(\cdot)$ for MEFAClassifier".
+    2. `n_estimators`: The ensemble size $s$.
+    3. `projection_ratio`: Controls the projection dimensionality, denoted as $\mu$.
+    4. `projection_density`: Controls the average number of features to be projected, denoted as $\lambda$.
+    5. `ratio_sampling`: The propotion of instances to be drawn as the training set in each iteration, denoted as $r$.
