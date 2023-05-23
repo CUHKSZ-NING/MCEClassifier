@@ -24,4 +24,4 @@ Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-L
     2. `n_estimators`: The ensemble size $s$.
     3. `projection_ratio`: Controls the projection dimensionality, denoted as $\mu$.
     4. `projection_density`: Controls the average number of features to be projected, denoted as $\lambda$.
-    5. `ratio_sampling`: The propotion of instances to be drawn as the training set in each iteration, denoted as $r$.
+    5. `ratio_sampling`: The proportion of instances to be drawn as the training set in each iteration, denoted as $r$.
