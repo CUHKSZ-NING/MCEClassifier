@@ -29,7 +29,7 @@ class DT_new(BaseEstimator):
 
 
 class PFEClassifier(BaseEstimator):
-    def __init__(self, base_estimator=DT_new(), n_estimators=100, meta=True, projection_ratio=1.5, projection_density=2,
+    def __init__(self, base_estimator=DT_new(), n_estimators=100, meta=True, projection_ratio=1.0, projection_density=3,
                  ratio_sampling=0.8, weights=None, re_balancing=True, entries='auto', feature_selection=False):
         if weights is None:
             weights = [0, 0, 0]
