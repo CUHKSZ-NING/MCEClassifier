@@ -1,4 +1,4 @@
-# PFEClassifier
+# PLEClassifier
 
 Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-Label Learning`.
 
@@ -11,9 +11,9 @@ Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-L
     1. `imblearn` (https://github.com/scikit-learn-contrib/imbalanced-learn);
     2. `iterative-stratification` (https://github.com/trent-b/iterative-stratification).
 
-* PFEClassifier is compatible with most sklearn APIs but is not strictly tested.
+* PLEClassifier is compatible with most sklearn APIs but is not strictly tested.
 
-* Import: `from PFEClassifier import PFEClassifier`.
+* Import: `from PLEClassifier import PLEClassifier`.
 
 * Train: `fit(X, y)`, with target $\textbf{y}_i \in (0, 1)^l$ as the labels. 
 
