@@ -7,27 +7,6 @@ from imblearn.metrics import geometric_mean_score
 from scipy.stats import spearmanr
 
 
-class DT_new(BaseEstimator):
-    def __init__(self):
-        self.model = DT()
-
-    def fit(self, X, y):
-        self.model.fit(X, y)
-
-    def predict(self, X):
-        return self.model.predict(X)
-
-    def predict_proba(self, X):
-        y_pred_proba = self.model.predict_proba(X)
-        label_pred_proba = np.zeros((len(X), len(y_pred_proba)))
-        for i in range(0, len(y_pred_proba)):
-            try:
-                label_pred_proba[..., i] = y_pred_proba[i][..., 1]
-            except IndexError:
-                label_pred_proba[..., i] = y_pred_proba[i][..., 0]
-        return label_pred_proba
-
-
 class PLEClassifier(BaseEstimator):
     def __init__(self, base_estimator=DT_new(), n_estimators=100, meta=True, projection_ratio=1.0, projection_density=3,
                  ratio_sampling=0.8, weights=None, re_balancing=True, entries='auto', feature_selection=False):
@@ -249,4 +228,25 @@ class PLEClassifier(BaseEstimator):
                 weight_negative = (1 - label_pred_proba[..., i]) / (1 - self.threshold_target[i])
                 label_pred_proba[..., i] = weight_positive / (weight_positive + weight_negative)
 
+        return label_pred_proba
+
+
+class DT_new(BaseEstimator):
+    def __init__(self):
+        self.model = DT()
+
+    def fit(self, X, y):
+        self.model.fit(X, y)
+
+    def predict(self, X):
+        return self.model.predict(X)
+
+    def predict_proba(self, X):
+        y_pred_proba = self.model.predict_proba(X)
+        label_pred_proba = np.zeros((len(X), len(y_pred_proba)))
+        for i in range(0, len(y_pred_proba)):
+            try:
+                label_pred_proba[..., i] = y_pred_proba[i][..., 1]
+            except IndexError:
+                label_pred_proba[..., i] = y_pred_proba[i][..., 0]
         return label_pred_proba
