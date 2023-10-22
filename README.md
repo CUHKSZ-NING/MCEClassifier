@@ -1,6 +1,6 @@
-# PLEClassifier
+# MCEClassifier
 
-Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-Label Learning`.
+Code for manuscript `Exploiting Meta-Learned Confidences for Imbalanced Multi-Label Learning`.
 
 * Required Python 3 packages:
     1. `numpy==1.21.5`;
@@ -11,9 +11,9 @@ Code for manuscript `Viewing Labels as Uncertain Features for Imbalanced Multi-L
     1. `imblearn` (https://github.com/scikit-learn-contrib/imbalanced-learn);
     2. `iterative-stratification` (https://github.com/trent-b/iterative-stratification).
 
-* PLEClassifier is compatible with most sklearn APIs but is not strictly tested.
+* MCEClassifier is compatible with most sklearn APIs but is not strictly tested.
 
-* Import: `from PLEClassifier import PLEClassifier`.
+* Import: `from MCEClassifier import MCEClassifier`.
 
 * Train: `fit(X, y)`, with target $\textbf{y}_i \in (0, 1)^l$ as the labels. 
 
