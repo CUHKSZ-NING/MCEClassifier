@@ -4,7 +4,7 @@ from copy import deepcopy
 import random
 import numpy as np
 from imblearn.metrics import geometric_mean_score
-from scipy.stats import spearmanr
+
 
 
 class DT_new(BaseEstimator):
