@@ -65,21 +65,22 @@ class MCEClassifier(BaseEstimator):
     def projection_matrix(self, iteration=-1):
         projection_dim = max(int(self.n_features * self.projection_ratio + 0.5), 1)
         projection = np.zeros((self.n_features, projection_dim))
+
+        weight = np.zeros(self.n_features)
+        for j in range(0, len(weight)):
+            if j < self.n_features_original:
+                weight[j] = 1
+            else:
+                weight[j] = iteration / self.n_estimators
+        weight = weight * self.projection_density / sum(weight)
+
         for i in range(0, projection_dim):
             if self.entries == 'auto' and self.meta is True:
                 indices = []
-                weight = np.zeros(self.n_features)
-                for j in range(0, len(weight)):
-                    if j < self.n_features_original:
-                        weight[j] = 1
-                    else:
-                        weight[j] = iteration / self.n_estimators
-                weight = weight * self.projection_density / sum(weight)
-                for j in range(0, len(weight)):
-                    if random.random() <= weight[j]:
-                        indices.append(j)
-                if len(indices) == 0:
-                    indices = random.sample(range(0, self.n_features_original), 1)
+                while len(indices) == 0:
+                    for j in range(0, len(weight)):
+                        if random.random() <= weight[j]:
+                            indices.append(j)
             else:
                 indices = random.sample(range(0, self.n_features), self.projection_density)
             for j in indices:
