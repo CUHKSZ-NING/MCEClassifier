@@ -17,7 +17,7 @@ Code for our accepted paper `Exploiting Meta-Learned Confidences for Imbalanced 
 
 * Train: `fit(X, y)`, with target $\textbf{y}_i \in (0, 1)^l$ as the labels. 
 
-* Predict: `predict(X)` (hard prediction), `predict_proba(X)` (probalistic prediction).
+* Predict: `predict(X)` (deterministic prediction), `predict_proba(X)` (probalistic prediction).
 
 * Parameters: 
     1. `base_estimator`: multi-label classifier object with `predict_proba()` function;
