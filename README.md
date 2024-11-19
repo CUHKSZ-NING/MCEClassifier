@@ -1,6 +1,6 @@
 # MCEClassifier
 
-Code for manuscript `Exploiting Meta-Learned Confidences for Imbalanced Multi-Label Learning`.
+Code for our accepted paper `Exploiting Meta-Learned Confidences for Imbalanced Multi-Label Learning`.
 
 * Required Python 3 packages:
     1. `numpy==1.21.5`;
