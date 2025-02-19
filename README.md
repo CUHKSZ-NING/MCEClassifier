@@ -20,7 +20,7 @@ Code for our accepted paper `Exploiting Meta-Learned Confidences for Imbalanced 
 * Predict: `predict(X)` (deterministic prediction), `predict_proba(X)` (probalistic prediction).
 
 * Parameters: 
-    1. `base_estimator`: multi-label classifier object with `predict_proba()` function;
+    1. `base_estimator`: Multi-label classifier object with `predict_proba()` function;
     2. `n_estimators`: The ensemble size $s$;
     3. `projection_ratio`: Controls the projection dimensionality, denoted as $\mu$;
     4. `projection_density`: Controls the average number of features to be projected, denoted as $\lambda$;
