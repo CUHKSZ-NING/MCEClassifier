@@ -217,7 +217,12 @@ class MCEClassifier(BaseEstimator):
                     score = score_temp
 
     def predict(self, X):
-        pass
+        label_pred = self.predict(X)
+        label_pred[np.where(label_pred >= 0.5)] = 1
+        label_pred[np.where(label_pred < 0.5)] = 0
+        label_pred.astype(int)
+        
+        return label_pred
 
     def predict_proba(self, X):
         n_instances = len(X)
