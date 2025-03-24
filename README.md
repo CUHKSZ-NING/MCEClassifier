@@ -1,6 +1,6 @@
 # MCEClassifier
 
-Code for our accepted paper `Exploiting Meta-Learned Confidences for Imbalanced Multi-Label Learning`.
+Code for paper `Ning, Zhihan, Zhixing Jiang, and David Zhang. "Exploiting Meta-Learned Confidences for Imbalanced Multilabel Learning." IEEE Transactions on Neural Networks and Learning Systems (2024).`
 
 * Required Python 3 packages:
     1. `numpy==1.21.5`;
